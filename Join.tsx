@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "./Button"; // 버튼 컴포넌트를 가져옵니다.
+import Button from "./src/Button"; // 버튼 컴포넌트를 가져옵니다.
 import "./App.css"; // 필요한 스타일을 포함합니다.
 
-const Join = () => {
+const Join: React.FC = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -101,7 +101,7 @@ const Join = () => {
           />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        <Button type="submit" label="Join" />
+        <Button onClick={submit} />
       </form>
     </div>
   );
